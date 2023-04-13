@@ -6,8 +6,14 @@ import Shop from './Shop'
 
 function RouteSwitch() {
   return (
-    <div>RouteSwitch</div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/about" element={<About />} />
+        <Route path='/shop' element={<Shop />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default RouteSwitch
