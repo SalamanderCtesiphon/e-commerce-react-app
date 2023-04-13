@@ -2,7 +2,7 @@ import React from 'react'
 
 function About() {
   return (
-    <div>
+    <div className="App"> 
       <h1>About Page!!!!!!!</h1>
       <form action="/">
           <button type="submit">Home</button>
