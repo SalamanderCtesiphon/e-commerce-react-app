@@ -8,3 +8,21 @@
   justify-content: space-between;
   align-items: center;
 }
+.card-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-list {
+  list-style: none;
+  
+}
+
+.card {
+  border: 1px solid black;
+  width: 40vw;
+  margin: 1vw;
+  display: flex;
+  justify-content: space-between;
+}

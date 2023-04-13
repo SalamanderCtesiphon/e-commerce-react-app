@@ -22,9 +22,15 @@ function Shop() {
       price: 300.00,
     },
   ])
+  const [shoppingCart, setShoppingCart] = useState([])
 
-  function log() {
-    console.log(inventory[0].price)
+  function selectItem(id) { 
+    /* inventory.map((item) => {
+      if(item.id === id) {
+        console.log(item)
+      }
+    }) */
+    console.log(id)
   }
 
   return (
@@ -42,17 +48,20 @@ function Shop() {
           </div>
         </div>
         <div>
-          <button onClick={() => log()}>click</button>
-          <div>{inventory[0].price}</div>
           <div className='card-display'>
-            <ul>
-            {inventory.map((item) => {
-              return (
-                <li key={item.id}>
-                  <h3>{item.title}</h3>
-                </li>
-              )
-            })}
+            <ul className='card-list'>
+              {inventory.map((item) => {
+                return (
+                  <li key={item.id} className='card'>
+                    <div className='left-box'>
+                      <h3>{item.title}</h3>
+                      <p>{item.price}</p>
+                    </div>
+                    
+                    <button onClick={() => selectItem()}>Select Item</button>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>
