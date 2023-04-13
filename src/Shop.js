@@ -47,7 +47,7 @@ function Shop() {
 
   useEffect(() => {
     console.log(shoppingCart)
-  }, [shoppingCart])
+  })
 
   return (
     <div className="App">
