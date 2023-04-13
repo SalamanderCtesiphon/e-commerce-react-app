@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 function Shop() {
@@ -32,10 +32,22 @@ function Shop() {
   function selectItem(id) { 
     inventory.map((item) => {
       if(item.id === id) {
-        console.log(item) 
+        setShoppingCart(shoppingItems => {
+          return [
+            ...shoppingItems,
+            {
+              id, quantity: item.quantity, title: item.title, price: item.price
+            },
+          ]
+        })
       }
     })
+    
   }
+
+  useEffect(() => {
+    console.log(shoppingCart)
+  }, [shoppingCart])
 
   return (
     <div className="App">
