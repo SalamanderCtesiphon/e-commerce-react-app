@@ -23,14 +23,18 @@ function Shop() {
     },
   ])
   const [shoppingCart, setShoppingCart] = useState([])
+  const [id, setId] = useState(null)
+  const [quantity, setQuantity] = useState(null)
+  const [title, setTitle] = useState(null)
+  const [price, setPrice] = useState(null)
+  
 
   function selectItem(id) { 
-    /* inventory.map((item) => {
+    inventory.map((item) => {
       if(item.id === id) {
-        console.log(item)
+        console.log(item) 
       }
-    }) */
-    console.log(id)
+    })
   }
 
   return (
@@ -58,7 +62,7 @@ function Shop() {
                       <p>{item.price}</p>
                     </div>
                     
-                    <button onClick={() => selectItem()}>Select Item</button>
+                    <button onClick={() => selectItem(item.id)}>Select Item</button>
                   </li>
                 )
               })}
