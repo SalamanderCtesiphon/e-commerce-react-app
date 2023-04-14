@@ -23,10 +23,7 @@ function Shop() {
     },
   ])
   const [shoppingCart, setShoppingCart] = useState([])
-  const [id, setId] = useState(null)
   const [quantity, setQuantity] = useState(null)
-  const [title, setTitle] = useState(null)
-  const [price, setPrice] = useState(null)
   
 
   function selectItem(id) { 
