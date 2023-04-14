@@ -8,42 +8,61 @@ function Shop() {
       quantity: 1,
       title: 'M4800',
       price: 100.00,
+      selected: false,
     },
     {
       id: 2,
       quantity: 1,
       title: 'M5000',
       price: 200.00,
+      selected: false,
     },
     {
       id: 3,
       quantity: 1,
       title: 'M6200',
       price: 300.00,
+      selected: false,
     },
   ])
-  const [shoppingCart, setShoppingCart] = useState([])
-  const [quantity, setQuantity] = useState(null)
-  
 
-  function selectItem(id) { 
+  const [shoppingCart, setShoppingCart] = useState([])
+
+  function createNewShoppingCart(id) {
     inventory.map((item) => {
       if(item.id === id) {
         setShoppingCart(shoppingItems => {
           return [
             ...shoppingItems,
             {
-              id, quantity: item.quantity, title: item.title, price: item.price
+              id, quantity: item.quantity, title: item.title, price: item.price, selected: true
             },
-          ]
+          ]          
         })
       }
-    })
-    
+      return shoppingCart
+    }) 
+  }
+
+  function selectItem(id) { 
+    if(shoppingCart.length === 0) {
+      createNewShoppingCart(id)
+    } else {
+      shoppingCart.map(shoppingItems => {
+        if(shoppingItems.id === id) {
+          console.log('hi')
+          return 
+        } else {
+          createNewShoppingCart(id) 
+        }
+      })
+    }
+    return shoppingCart 
   }
 
   useEffect(() => {
     console.log(shoppingCart)
+    console.log(inventory)
   })
 
   return (
