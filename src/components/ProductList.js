@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ProductList({ inventory, selectItem, format}) {
+function ProductList({ productsArray, selectItem, format}) {
   return (
     <div>
-       {inventory.map((item) => {
+       {productsArray.map((item) => {
           return (
             <li key={item.id} className='card'>
               <div className='left-box'>
