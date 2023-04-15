@@ -3,42 +3,16 @@ import { useState } from 'react'
 import { BiCart } from 'react-icons/bi'
 import { BsXLg, BsDash, BsPlus } from 'react-icons/bs'
 import ProductList from './components/ProductList'
+import { productsArray } from './Products'
 
 function Shop() {
   const [inventory] = useState([
-    {
-      id: 1,
-      quantity: 1,
-      title: 'M4800',
-      price: 100.00,
-      selected: false,
-    },
-    {
-      id: 2,
-      quantity: 1,
-      title: 'M5000',
-      price: 200.00,
-      selected: false,
-    },
-    {
-      id: 3,
-      quantity: 1,
-      title: 'M6200',
-      price: 300.00,
-      selected: false,
-    },
+
   ])
 
   const [shoppingCart, setShoppingCart] = useState([])
 
-  function getInventoryItemData(id) {
-    let inventoryItemData = inventory.find(inventoryItem => inventoryItem.id === id)
-    if(inventoryItemData == undefined) {
-      console.log('data does not exist for id')
-      return undefined
-    }
-    return inventoryItemData
-  }
+
 
   function selectItem(id) { 
     showCheckout()
@@ -54,13 +28,13 @@ function Shop() {
         return shoppingCart
       })
     } else {
-      inventory.map((item) => {
+      productsArray.map((item) => {
         if(item.id === id) {
           setShoppingCart(shoppingItems => {
             return [
               ...shoppingItems,
               {
-                id, quantity: item.quantity, title: item.title, price: item.price, selected: true
+                id, quantity: item.quantity, title: item.title, price: item.price
               },
             ]          
           })
@@ -157,7 +131,7 @@ function Shop() {
           <div className='card-display'>
             <ul className='card-list'>
              <ProductList 
-             inventory={inventory}
+             productsArray={productsArray}
              selectItem={selectItem}
              format={format}
              />
