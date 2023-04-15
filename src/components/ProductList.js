@@ -11,7 +11,7 @@ function ProductList({ inventory, selectItem}) {
                       <p>{item.price}</p>
                     </div>
                     
-                    <button onClick={() => selectItem(item.id)}>Select Item</button>
+                    <div className='select-btn' onClick={() => selectItem(item.id)}>Select Item</div>
                   </li>
                 )
               })}
