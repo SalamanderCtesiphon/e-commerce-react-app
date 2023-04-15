@@ -45,24 +45,13 @@ function Shop() {
   }
 
   function selectItem(id) { 
-    if(shoppingCart.length === 0) {
-      createNewShoppingCart(id)
-    } else {
-      shoppingCart.map(shoppingItems => {
-        if(shoppingItems.id === id) {
-          console.log('hi')
-          return 
-        } else {
-          createNewShoppingCart(id) 
-        }
-      })
-    }
+    createNewShoppingCart(id)
     return shoppingCart 
   }
 
   useEffect(() => {
     console.log(shoppingCart)
-    console.log(inventory)
+
   })
 
   return (
@@ -96,9 +85,17 @@ function Shop() {
               })}
             </ul>
           </div>
+          <div className='checkout'>
+            <ul>
+              {shoppingCart.map((shoppingItems) => {
+                return (
+                  <li>{shoppingItems.title}</li>
+                )
+              })}
+            </ul>
+          </div>
         </div>
       </div>
-      
     </div>
   )
 }
