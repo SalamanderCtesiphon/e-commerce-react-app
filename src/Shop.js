@@ -28,7 +28,9 @@ function Shop() {
 
   const [shoppingCart, setShoppingCart] = useState([])
 
-  function createNewShoppingCart(id) {
+  
+
+  function selectItem(id) { 
     inventory.map((item) => {
       if(item.id === id) {
         setShoppingCart(shoppingItems => {
@@ -42,10 +44,6 @@ function Shop() {
       }
       return shoppingCart
     }) 
-  }
-
-  function selectItem(id) { 
-    createNewShoppingCart(id)
     return shoppingCart 
   }
 
@@ -89,7 +87,7 @@ function Shop() {
             <ul>
               {shoppingCart.map((shoppingItems) => {
                 return (
-                  <li>{shoppingItems.title}</li>
+                  <li key={shoppingItems.id}>{shoppingItems.title}</li>
                 )
               })}
             </ul>
