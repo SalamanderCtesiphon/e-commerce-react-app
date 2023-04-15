@@ -31,6 +31,12 @@ function Shop() {
   
 
   function selectItem(id) { 
+    const sameProduct = shoppingCart.filter((shoppingItems) => {
+      return shoppingItems.id === id
+    })
+    if(sameProduct.length === 1) {
+      console.log('hi')
+    }
     inventory.map((item) => {
       if(item.id === id) {
         setShoppingCart(shoppingItems => {
@@ -48,7 +54,7 @@ function Shop() {
   }
 
   useEffect(() => {
-    console.log(shoppingCart)
+    //console.log(shoppingCart)
 
   })
 
@@ -85,11 +91,6 @@ function Shop() {
           </div>
           <div className='checkout'>
             <ul>
-              {shoppingCart.map((shoppingItems) => {
-                return (
-                  <li key={shoppingItems.id}>{shoppingItems.title}</li>
-                )
-              })}
             </ul>
           </div>
         </div>
