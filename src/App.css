@@ -7,7 +7,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
+
+.btn-box {
+  display: flex;
+  width: 30vw;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.shopping-cart {
+  height: auto;
+  width: 40px;
+  cursor: pointer;
+}
+
+.items-in-cart {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: auto;
+  position: absolute;
+  right: 6vw;
+  top: 3vh;
+
+}
+
 .card-display {
   display: flex;
   flex-direction: column;
