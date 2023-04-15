@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import shopping_cart_black_24dp.svg from "src/icons/shopping_cart_black_24dp.svg"
 
 function Shop() {
   const [inventory] = useState([
@@ -70,6 +71,7 @@ function Shop() {
         <div className='header'>
           <h1>Shop Page!!!!!!!</h1>
           <div className='btn-box'>
+            <img src='../src/icons/shopping_cart_black_24dp.svg'/>
             <form action="/">
                 <button type="submit">Home</button>
             </form>
