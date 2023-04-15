@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { BiCart } from 'react-icons/bi'
-import { BsXLg } from 'react-icons/bs'
+import { BsXLg, BsDash, BsPlus } from 'react-icons/bs'
 
 function Shop() {
   const [inventory] = useState([
@@ -80,12 +80,11 @@ function Shop() {
         return(
         <li key={shoppingItems.id} className='check-out-card'>
           <p>Product: {shoppingItems.title}</p>
-          <form>
-            <label htmlFor='quantity'>Quantitly:</label>
-            <input type='number' name='quantity'  value={shoppingItems.quantity}
-            onChange={() => console.log("hi")}
-            />
-          </form>
+          <div>Quantity:</div>
+          <div className='quantity-display'>
+          <BsDash className='quant-btn'/><div className='quant-display'>{shoppingItems.quantity}</div> <BsPlus className='quant-btn'/>
+          </div>
+         
         </li>
         )
       })

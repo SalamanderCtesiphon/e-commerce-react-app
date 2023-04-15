@@ -85,6 +85,26 @@ a {
   margin-right: 3vw;
 }
 
+.quant-btn {
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.quantity-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+}
+
+.quant-display {
+  border: 1px solid black;
+  width: 30px;
+  height: 20px;
+}
+
 .check-out-btn {
   background-color: rgba(59, 146, 59, 0.719);
   color: white;
