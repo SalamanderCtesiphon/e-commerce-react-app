@@ -48,11 +48,24 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .card-list {
   list-style: none;
   
+}
+
+.select-btn {
+  cursor: pointer;
+  background-color:  rgba(59, 146, 59, 0.719);
+  border-radius: 1vh;
+  color: white;
+  height: 5vh;
+  width: auto;
+  padding: 3px;
+  display: flex;
+  align-items: center;
 }
 
 .checkout {
@@ -143,4 +156,5 @@ li {
   margin: 1vw;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
