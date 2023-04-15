@@ -40,6 +40,7 @@ function Shop() {
           shoppingItems.quantity = shoppingItems.quantity + 1
           sameProduct = []
         }
+        return shoppingCart
       })
     } else {
       inventory.map((item) => {
@@ -53,16 +54,19 @@ function Shop() {
             ]          
           })
         }
+        return shoppingCart
       }) 
     }
     console.log(shoppingCart)
     return shoppingCart 
   }
 
-/*   useEffect(() => {
-    console.log(shoppingCart)
+  function getSubTotal(shoppingItems) {
+    return shoppingItems.quantity * shoppingItems.price
+  }
 
-  }) */
+  useEffect(() => {
+  }, [shoppingCart.quantity])
 
   return (
     <div className="App">
@@ -97,6 +101,15 @@ function Shop() {
           </div>
           <div className='checkout'>
             <ul>
+             {shoppingCart.map((shoppingItems) => {
+                return(
+                <li key={shoppingItems.id}>
+                  {shoppingItems.title}
+                  {shoppingItems.quantity}
+                  {getSubTotal(shoppingItems)}
+                </li>
+                )
+              })}
             </ul>
           </div>
         </div>
