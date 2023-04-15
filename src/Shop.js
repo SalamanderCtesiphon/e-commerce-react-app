@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { BiCart } from 'react-icons/bi'
 import { BsXLg, BsDash, BsPlus } from 'react-icons/bs'
+import ProductList from './components/ProductList'
 
 function Shop() {
   const [inventory] = useState([
@@ -64,6 +65,15 @@ function Shop() {
     return shoppingCart 
   }
 
+  function changeQuantity(id) {
+    shoppingCart.map((shoppingItems) => {
+      if(shoppingItems.id === id) {
+       console.log('hi')
+      }
+    })
+    console.log(shoppingCart)
+  }
+
   function showCheckout() {
     const checkOut = document.querySelector('.checkout')
     checkOut.style.visibility = 'visible'
@@ -82,8 +92,13 @@ function Shop() {
           <p>Product: {shoppingItems.title}</p>
           <div>Quantity:</div>
           <div className='quantity-display'>
-          <BsDash className='quant-btn'/><div className='quant-display'>{shoppingItems.quantity}</div> <BsPlus className='quant-btn'/>
+          <BsDash className='quant-btn'/><input
+            className='quant-display'
+            defaultValue={shoppingItems.quantity} 
+            />
+             <BsPlus className='quant-btn' onClick={() => changeQuantity()}/>
           </div>
+          <div>Subtotal: {shoppingItems.quantity * shoppingItems.price}</div>
          
         </li>
         )
@@ -91,8 +106,21 @@ function Shop() {
     )
   }
 
+
+  function totalCost() {
+    let results = 0
+    let temp = 0
+    shoppingCart.map((shoppingItems) => {
+      results = 0
+      results = shoppingItems.quantity * shoppingItems.price
+      temp += results
+    })
+    return temp
+  }
+
   useEffect(() => {
     renderCheckOut()
+    totalCost()
   })
 
   const shoppingCartDisplay = shoppingCart.length
@@ -112,18 +140,10 @@ function Shop() {
         <div>
           <div className='card-display'>
             <ul className='card-list'>
-              {inventory.map((item) => {
-                return (
-                  <li key={item.id} className='card'>
-                    <div className='left-box'>
-                      <h3>{item.title}</h3>
-                      <p>{item.price}</p>
-                    </div>
-                    
-                    <button onClick={() => selectItem(item.id)}>Select Item</button>
-                  </li>
-                )
-              })}
+             <ProductList 
+             inventory={inventory}
+             selectItem={selectItem}
+             />
             </ul>
           </div>
           <div className='checkout'>
@@ -131,7 +151,7 @@ function Shop() {
             <ul>
              {renderCheckOut()}
             </ul>
-            <div className='subtotal'>this will be the subtotal</div>
+            <div className='subtotal'>this will be the subtotal{totalCost()}</div>
             <div className='check-out-btn'onClick={() => hideCheckout()}>Check Out</div>
           </div>
         </div>
