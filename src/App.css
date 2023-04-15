@@ -61,7 +61,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: absolute;
   top: 10.5vh;
   right: 0vw;
@@ -82,7 +82,9 @@ a {
   border: 1px solid black;
   width: 20vw;
   height: 15vh;
+  min-height: 120px;
   margin-right: 3vw;
+  margin-top: 2vh
 }
 
 .quant-btn {
@@ -102,7 +104,11 @@ a {
 .quant-display {
   border: 1px solid black;
   width: 30px;
-  height: 20px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1vw;
 }
 
 .check-out-btn {
