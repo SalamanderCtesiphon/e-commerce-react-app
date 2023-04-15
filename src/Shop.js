@@ -62,8 +62,37 @@ function Shop() {
     return shoppingCart 
   }
 
+  function showCheckout() {
+    const checkOut = document.querySelector('.checkout')
+    checkOut.style.visibility = 'visible'
+  }
+
+  function hideCheckout() {
+    const checkOut = document.querySelector('.checkout')
+    checkOut.style.visibility = 'hidden'
+  }
+
+  function renderCheckOut() {
+    return (
+      shoppingCart.map((shoppingItems) => {
+        return(
+        <li key={shoppingItems.id} className='check-out-card'>
+          <p>Product: {shoppingItems.title}</p>
+          <form>
+            <label htmlFor='quantity'>Quantitly:</label>
+            <input type='number' name='quantity'  value={shoppingItems.quantity}
+            onChange={() => console.log("hi")}
+            />
+          </form>
+        </li>
+        )
+      })
+    )
+  }
+
   useEffect(() => {
-  }, [shoppingCart.quantity])
+    renderCheckOut()
+  })
 
   const shoppingCartDisplay = shoppingCart.length
 
@@ -75,7 +104,7 @@ function Shop() {
           <div className='btn-box'>
             <a href="/">Home</ a>
             <a href="/About">About</a>
-            <BiCart className='shopping-cart'onClick={() => console.log('hi')}/>
+            <BiCart className='shopping-cart'onClick={() => showCheckout()}/>
             {shoppingCart.length > 0 ? <div className='items-in-cart'>{shoppingCartDisplay}</div> : null}
           </div>
         </div>
@@ -98,17 +127,10 @@ function Shop() {
           </div>
           <div className='checkout'>
             <ul>
-             {shoppingCart.map((shoppingItems) => {
-                return(
-                <li key={shoppingItems.id} className='check-out-card'>
-                  {shoppingItems.title}
-                  {shoppingItems.quantity}
-                </li>
-                )
-              })}
+             {renderCheckOut()}
             </ul>
             <div className='subtotal'>this will be the subtotal</div>
-            <div className='check-out-btn'>Check Out</div>
+            <div className='check-out-btn'onClick={() => hideCheckout()}>Check Out</div>
           </div>
         </div>
       </div>
