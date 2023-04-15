@@ -65,7 +65,7 @@ a {
   top: 10.5vh;
   right: 0vw;
   width: 20vw;
-  height: 60vh;
+  height: 80vh;
 }
 
 .check-out-card {
@@ -89,6 +89,16 @@ a {
 
 li {
   list-style-type: none;
+}
+
+.subtotal { 
+  border: 1px solid black;
+  width: 20vw;
+  height: 15vh;
+  margin-right: 1vw;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2vh;
 }
 
 .card {
