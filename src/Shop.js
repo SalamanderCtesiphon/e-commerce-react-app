@@ -31,7 +31,14 @@ function Shop() {
 
   const [shoppingCart, setShoppingCart] = useState([])
 
-  
+  function getInventoryItemData(id) {
+    let inventoryItemData = inventory.find(inventoryItem => inventoryItem.id === id)
+    if(inventoryItemData == undefined) {
+      console.log('data does not exist for id')
+      return undefined
+    }
+    return inventoryItemData
+  }
 
   function selectItem(id) { 
     showCheckout()
@@ -84,6 +91,15 @@ function Shop() {
     checkOut.style.visibility = 'hidden'
   }
 
+  const format = (amount) => {
+    const formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
+    return formatter.format(amount);
+  };
+
   function renderCheckOut() {
     return (
       shoppingCart.map((shoppingItems) => {
@@ -98,7 +114,7 @@ function Shop() {
             />
              <BsPlus className='quant-btn' onClick={() => changeQuantity()}/>
           </div>
-          <div>Subtotal: {shoppingItems.quantity * shoppingItems.price}</div>
+          <div>Subtotal: {format(shoppingItems.quantity * shoppingItems.price)}</div>
          
         </li>
         )
@@ -143,6 +159,7 @@ function Shop() {
              <ProductList 
              inventory={inventory}
              selectItem={selectItem}
+             format={format}
              />
             </ul>
           </div>
@@ -151,7 +168,7 @@ function Shop() {
             <ul>
              {renderCheckOut()}
             </ul>
-            <div className='subtotal'>this will be the subtotal{totalCost()}</div>
+            <div className='subtotal'>this will be the subtotal: {format(totalCost())}</div>
             <div className='check-out-btn'onClick={() => hideCheckout()}>Check Out</div>
           </div>
         </div>
