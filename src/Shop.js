@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { BiCart } from 'react-icons/bi'
+import { BsXLg } from 'react-icons/bs'
 
 function Shop() {
   const [inventory] = useState([
@@ -32,6 +33,7 @@ function Shop() {
   
 
   function selectItem(id) { 
+    showCheckout()
     let sameProduct = shoppingCart.filter((shoppingItems) => {
       return shoppingItems.id === id
     })
@@ -126,6 +128,7 @@ function Shop() {
             </ul>
           </div>
           <div className='checkout'>
+            <BsXLg className='exit' onClick={() => hideCheckout()}/>
             <ul>
              {renderCheckOut()}
             </ul>
