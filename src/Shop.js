@@ -75,7 +75,7 @@ function Shop() {
           <div className='btn-box'>
             <a href="/">Home</ a>
             <a href="/About">About</a>
-            <BiCart className='shopping-cart'/>
+            <BiCart className='shopping-cart'onClick={() => console.log('hi')}/>
             {shoppingCart.length > 0 ? <div className='items-in-cart'>{shoppingCartDisplay}</div> : null}
           </div>
         </div>
@@ -100,13 +100,14 @@ function Shop() {
             <ul>
              {shoppingCart.map((shoppingItems) => {
                 return(
-                <li key={shoppingItems.id}>
+                <li key={shoppingItems.id} className='check-out-card'>
                   {shoppingItems.title}
                   {shoppingItems.quantity}
                 </li>
                 )
               })}
             </ul>
+            <div className='check-out-btn'>Check Out</div>
           </div>
         </div>
       </div>
