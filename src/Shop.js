@@ -65,19 +65,18 @@ function Shop() {
   useEffect(() => {
   }, [shoppingCart.quantity])
 
+  const shoppingCartDisplay = shoppingCart.length
+
   return (
     <div className="App">
       <div className='page-view'>
         <div className='header'>
           <h1>Shop Page!!!!!!!</h1>
           <div className='btn-box'>
-            <BiCart />
-            <form action="/">
-                <button type="submit">Home</button>
-            </form>
-            <form action="/About">
-                <button type="submit">About</button>
-            </form>
+            <a href="/">Home</ a>
+            <a href="/About">About</a>
+            <BiCart className='shopping-cart'/>
+            {shoppingCart.length > 0 ? <div className='items-in-cart'>{shoppingCartDisplay}</div> : null}
           </div>
         </div>
         <div>
