@@ -61,10 +61,6 @@ function Shop() {
     return shoppingCart 
   }
 
-  function getSubTotal(shoppingItems) {
-    return shoppingItems.quantity * shoppingItems.price
-  }
-
   useEffect(() => {
   }, [shoppingCart.quantity])
 
@@ -106,7 +102,6 @@ function Shop() {
                 <li key={shoppingItems.id}>
                   {shoppingItems.title}
                   {shoppingItems.quantity}
-                  {getSubTotal(shoppingItems)}
                 </li>
                 )
               })}
