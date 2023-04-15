@@ -107,6 +107,7 @@ function Shop() {
                 )
               })}
             </ul>
+            <div className='subtotal'>this will be the subtotal</div>
             <div className='check-out-btn'>Check Out</div>
           </div>
         </div>
