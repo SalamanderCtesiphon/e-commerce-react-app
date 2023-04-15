@@ -69,6 +69,15 @@ a {
   height: 80vh;
 }
 
+.exit {
+  height: auto;
+  width: 20px;
+  position: absolute;
+  top: 1vh;
+  right:1vh;
+  cursor: pointer;
+}
+
 .check-out-card {
   border: 1px solid black;
   width: 20vw;
