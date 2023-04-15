@@ -31,32 +31,38 @@ function Shop() {
   
 
   function selectItem(id) { 
-    const sameProduct = shoppingCart.filter((shoppingItems) => {
+    let sameProduct = shoppingCart.filter((shoppingItems) => {
       return shoppingItems.id === id
     })
     if(sameProduct.length === 1) {
-      console.log('hi')
+      shoppingCart.map((shoppingItems) => {
+        if(shoppingItems.id === id) {
+          shoppingItems.quantity = shoppingItems.quantity + 1
+          sameProduct = []
+        }
+      })
+    } else {
+      inventory.map((item) => {
+        if(item.id === id) {
+          setShoppingCart(shoppingItems => {
+            return [
+              ...shoppingItems,
+              {
+                id, quantity: item.quantity, title: item.title, price: item.price, selected: true
+              },
+            ]          
+          })
+        }
+      }) 
     }
-    inventory.map((item) => {
-      if(item.id === id) {
-        setShoppingCart(shoppingItems => {
-          return [
-            ...shoppingItems,
-            {
-              id, quantity: item.quantity, title: item.title, price: item.price, selected: true
-            },
-          ]          
-        })
-      }
-      return shoppingCart
-    }) 
+    console.log(shoppingCart)
     return shoppingCart 
   }
 
-  useEffect(() => {
-    //console.log(shoppingCart)
+/*   useEffect(() => {
+    console.log(shoppingCart)
 
-  })
+  }) */
 
   return (
     <div className="App">
