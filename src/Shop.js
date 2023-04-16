@@ -4,6 +4,7 @@ import { BiCart } from 'react-icons/bi'
 import { BsXLg, BsDash, BsPlus } from 'react-icons/bs'
 import ProductList from './components/ProductList'
 import { productsArray } from './Products'
+import CartProvider from './CartContext'
 
 function Shop() {
   const [shoppingCart, setShoppingCart] = useState([])
@@ -110,7 +111,8 @@ function Shop() {
   const shoppingCartDisplay = shoppingCart.length
 
   return (
-    <div className="App">
+    <CartProvider>
+      <div className="App">
       <div className='page-view'>
         <div className='header'>
           <h1>Shop Page!!!!!!!</h1>
@@ -142,6 +144,7 @@ function Shop() {
         </div>
       </div>
     </div>
+    </CartProvider>
   )
 }
 
