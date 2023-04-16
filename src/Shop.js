@@ -3,6 +3,7 @@ import ProductList from './components/ProductList'
 import Header from './components/Header'
 import { productsArray } from './reaources/Products'
 import CartProvider from './CartContext'
+import Footer from './components/Footer'
 
 
 function Shop() {
@@ -27,6 +28,7 @@ function Shop() {
             </ul>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
     </CartProvider>

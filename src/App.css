@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.page-view {
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .header {
   border: 1px solid black;
   display: flex;
@@ -156,4 +164,8 @@ li {
 
 .delete-button {
   cursor: pointer;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.233);
 }

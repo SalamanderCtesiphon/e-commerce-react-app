@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -8,14 +9,12 @@ function App() {
         <div className='header'>
           <h1>HomePage!!!!!!</h1>
           <div className='btn-box'>
-            <form action="/about">
-              <button type="submit">About</button>
-            </form>
-            <form action="/shop">
-              <button type="submit">Shop</button>
-            </form>
+            <a href="/">Home</ a>
+            <a href="/About">About</a>
+            <a href='/Shop'>Shop</a>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );
