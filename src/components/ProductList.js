@@ -1,21 +1,20 @@
 import React from 'react'
+import { CartContext } from '../CartContext'
+import { useContext } from 'react'
 
-function ProductList({ productsArray, selectItem, format}) {
+function ProductList(props) {
+  const product = props.product
+ /*  const cart = useContext(CartContext)
+  const productQuantity = cart.getProductQuantity(product.id) */
+
   return (
-    <div>
-       {productsArray.map((item) => {
-          return (
-            <li key={item.id} className='card'>
-              <div className='left-box'>
-                <h3>{item.title}</h3>
-                <p>Price: {format(item.price)}</p>
-              </div>
-              
-              <div className='select-btn' onClick={() => selectItem(item.id)}>Select Item</div>
-            </li>
-          )
-        })}
-    </div>
+    <li className='card'>
+      <div className='left-box'>
+        <h3>{product.title}</h3>
+        <p>Price: {product.price}</p>
+      </div>
+      <div className='select-btn'>Select Item</div>
+    </li>
   )
 }
 
