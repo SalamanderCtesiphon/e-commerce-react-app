@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductList from './components/ProductList'
 import Header from './components/Header'
-import { productsArray } from './components/reaources/Products'
+import { productsArray } from './reaources/Products'
 import CartProvider from './CartContext'
 
 
