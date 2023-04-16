@@ -13,6 +13,7 @@ function About() {
             <a href='/Shop'>Shop</a>
           </div>
         </div>
+        <div>contact developer by clicking the link in the footer</div>
         <Footer />
       </div>
     </div>

@@ -6,7 +6,7 @@ import Shop from './Shop'
 
 function RouteSwitch() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/e-commerce-react-app'>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />

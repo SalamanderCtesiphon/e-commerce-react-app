@@ -7,6 +7,7 @@ import CheckOut from './CheckOut'
 function Header() {
   const cart = useContext(CartContext)
   const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
+  
 
   return (
     <div>
