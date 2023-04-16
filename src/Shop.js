@@ -4,6 +4,7 @@ import Header from './components/Header'
 import { productsArray } from './Products'
 import CartProvider from './CartContext'
 
+
 function Shop() {
   
  
@@ -24,7 +25,6 @@ function Shop() {
               )
              })}
             </ul>
-            <div className='checkout'>hi</div>
           </div>
         </div>
       </div>
