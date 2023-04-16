@@ -1,6 +1,5 @@
 import React from 'react'
 import { BiCart } from 'react-icons/bi'
-import { BsXLg } from 'react-icons/bs'
 import ProductList from './components/ProductList'
 import { productsArray } from './Products'
 import CartProvider from './CartContext'
@@ -31,13 +30,6 @@ function Shop() {
               )
              })}
             </ul>
-          </div>
-          <div className='checkout'>
-            <BsXLg className='exit' />
-            <ul>
-            </ul>
-            <div className='subtotal'>this will be the subtotal:</div>
-            <div className='check-out-btn'>Check Out</div>
           </div>
         </div>
       </div>
