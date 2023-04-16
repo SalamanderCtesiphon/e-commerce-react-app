@@ -2,7 +2,7 @@ import React from 'react'
 import { createContext, useState } from 'react'
 import { productsArray, getProductData } from './Products'
 
-const CartContext = createContext({
+export const CartContext = createContext({
   items: [],
   getProductQuantity: () => {},
   addOneToCart: () => {},
@@ -58,7 +58,7 @@ export function CartProvider({children}) {
 
   function removeOneFromCart(id) {
     const quantity = getProductQuantity(id)
-    if(quantity == 1) {
+    if(quantity === 1) {
       deleteFromCart(id)
     } else {
       setCartProducts(
