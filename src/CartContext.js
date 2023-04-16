@@ -81,6 +81,8 @@ export function CartProvider({children}) {
         return totalCost;
     }
 
+   
+
     const contextValue = {
         items: cartProducts,
         getProductQuantity,

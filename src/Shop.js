@@ -4,8 +4,7 @@ import ProductList from './components/ProductList'
 import { productsArray } from './Products'
 import CartProvider, { CartContext } from './CartContext'
 
-function Shop(props) {
-  let product = props.product
+function Shop() {
   const cart = useContext(CartContext)
   const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
  
@@ -18,14 +17,14 @@ function Shop(props) {
           <div className='btn-box'>
             <a href="/">Home</ a>
             <a href="/About">About</a>
-            <BiCart className='shopping-cart' />
+            <BiCart className='shopping-cart' onClick={() => console.log(cart)}/>
             <div className='items-in-cart'>({productsCount})</div>
           </div>
         </div>
         <div>
           <div className='card-display'>
             <ul className='card-list'>
-             {productsArray.map((product, id) => {
+             {productsArray.map((product, idx) => {
               return (
                 <ProductList 
                 product={product}
