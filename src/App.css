@@ -101,7 +101,6 @@ a {
 }
 
 .quant-btn {
-  border: 1px solid black;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -110,18 +109,14 @@ a {
 .quantity-display {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   width: 20vw;
 }
 
 .quant-display {
-  border: 1px solid black;
-  width: 30px;
-  height: 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-left: 1vw;
+  justify-content: center; 
 }
 
 .check-out-btn {

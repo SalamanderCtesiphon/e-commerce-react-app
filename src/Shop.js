@@ -1,6 +1,6 @@
 import React from 'react'
 import { BiCart } from 'react-icons/bi'
-import { BsXLg/* , BsDash, BsPlus */ } from 'react-icons/bs'
+import { BsXLg } from 'react-icons/bs'
 import ProductList from './components/ProductList'
 import { productsArray } from './Products'
 import CartProvider from './CartContext'
