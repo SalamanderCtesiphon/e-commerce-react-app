@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../CartContext'
-import { getProductData } from '../Products'
+import { getProductData } from './reaources/Products'
 import { BsXLg } from 'react-icons/bs'
 
 
