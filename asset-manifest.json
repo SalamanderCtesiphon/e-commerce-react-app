@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SalamanderCtesiphon/e-commerce-react-app/static/css/main.bc7f5e09.css",
+    "main.js": "/SalamanderCtesiphon/e-commerce-react-app/static/js/main.3187bca3.js",
+    "index.html": "/SalamanderCtesiphon/e-commerce-react-app/index.html",
+    "main.bc7f5e09.css.map": "/SalamanderCtesiphon/e-commerce-react-app/static/css/main.bc7f5e09.css.map",
+    "main.3187bca3.js.map": "/SalamanderCtesiphon/e-commerce-react-app/static/js/main.3187bca3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc7f5e09.css",
+    "static/js/main.3187bca3.js"
+  ]
+}
