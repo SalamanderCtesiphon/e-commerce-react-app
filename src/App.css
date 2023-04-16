@@ -69,7 +69,7 @@ a {
 }
 
 .checkout {
-  visibility: hidden;
+ /*  visibility: hidden; */
   margin-right: 2vw;
   display: flex;
   flex-direction: column;
@@ -152,4 +152,8 @@ li {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.delete-button {
+  cursor: pointer;
 }
