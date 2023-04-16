@@ -15,6 +15,7 @@ function Header() {
           <div className='btn-box'>
             <a href="/">Home</ a>
             <a href="/About">About</a>
+            <a href='/Shop'>Shop</a>
             <BiCart className='shopping-cart' onClick={() => console.log(cart)}/>
             {productsCount > 0 ? 
             <div className='items-in-cart'>{productsCount}</div> : null
