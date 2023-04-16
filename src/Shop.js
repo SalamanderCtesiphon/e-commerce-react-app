@@ -6,13 +6,7 @@ import ProductList from './components/ProductList'
 import { productsArray } from './Products'
 
 function Shop() {
-  const [inventory] = useState([
-
-  ])
-
   const [shoppingCart, setShoppingCart] = useState([])
-
-
 
   function selectItem(id) { 
     showCheckout()
