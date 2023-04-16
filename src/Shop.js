@@ -22,7 +22,7 @@ function Shop() {
         <div>
           <div className='card-display'>
             <ul className='card-list'>
-             {productsArray.map((product) => {
+             {productsArray.map((product, id) => {
               return (
                 <ProductList 
                 product={product}
