@@ -1,30 +1,21 @@
-import React, { useContext } from 'react'
-import { BiCart } from 'react-icons/bi'
+import React from 'react'
 import ProductList from './components/ProductList'
+import Header from './components/Header'
 import { productsArray } from './Products'
-import CartProvider, { CartContext } from './CartContext'
+import CartProvider from './CartContext'
 
 function Shop() {
-  const cart = useContext(CartContext)
-  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
+  
  
   return (
     <CartProvider>
       <div className="App">
       <div className='page-view'>
-        <div className='header'>
-          <h1>Shop Page!!!!!!!</h1>
-          <div className='btn-box'>
-            <a href="/">Home</ a>
-            <a href="/About">About</a>
-            <BiCart className='shopping-cart' onClick={() => console.log(cart)}/>
-            <div className='items-in-cart'>({productsCount})</div>
-          </div>
-        </div>
+       <Header />
         <div>
           <div className='card-display'>
             <ul className='card-list'>
-             {productsArray.map((product, idx) => {
+             {productsArray.map((product) => {
               return (
                 <ProductList 
                 product={product}
