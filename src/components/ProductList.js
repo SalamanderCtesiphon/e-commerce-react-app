@@ -5,7 +5,7 @@ import { useContext } from 'react'
 function ProductList(props) {
   const product = props.product
   const cart = useContext(CartContext)
-  const productQuantity = cart.getProductQuantity(product.id)
+  //const productQuantity = cart.getProductQuantity(product.id)
 
   console.log(cart.items)
 
