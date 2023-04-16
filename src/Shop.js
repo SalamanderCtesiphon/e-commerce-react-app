@@ -24,7 +24,7 @@ function Shop() {
               )
              })}
             </ul>
-            <div className='checkout'></div>
+            <div className='checkout'>hi</div>
           </div>
         </div>
       </div>
