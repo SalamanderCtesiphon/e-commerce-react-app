@@ -1,7 +1,7 @@
 import React from 'react'
 import { CartContext } from '../CartContext'
 import { useContext } from 'react'
-import { BsDash, BsPlus } from 'react-icons/bs'
+import { BsDash, BsPlus, BsXLg } from 'react-icons/bs'
 
 function ProductList(props) {
   const product = props.product
@@ -20,15 +20,15 @@ function ProductList(props) {
       <>
       <div className='quant-display'>
       <form > 
-        <BsDash className='quant-btn'/>
+        <BsDash className='quant-btn' onClick={() => cart.removeOneFromCart(product.id)} />
         <label>In Cart: {productQuantity}</label>
-        <BsPlus className='quant-btn'/>
+        <BsPlus className='quant-btn' onClick={() => cart.addOneToCart(product.id)} />
       </form>
       </div>
-      
+      <BsXLg className='delete-button' onClick={() => cart.deleteFromCart(product.id)} />
       </>
       :
-      <div className='select-btn' onClick={() => cart.addOneToCart(product.id)}>Select Item</div>
+      <div className='select-btn' onClick={() => cart.addOneToCart(product.id)}>Add to Cart</div>
       }
     </li>
   )
