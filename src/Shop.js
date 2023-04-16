@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BiCart } from 'react-icons/bi'
 import ProductList from './components/ProductList'
 import { productsArray } from './Products'
-import CartProvider from './CartContext'
+import CartProvider, { CartContext } from './CartContext'
 
-function Shop() {
+function Shop(props) {
+  let product = props.product
+  const cart = useContext(CartContext)
+  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
  
   return (
     <CartProvider>
@@ -15,7 +18,8 @@ function Shop() {
           <div className='btn-box'>
             <a href="/">Home</ a>
             <a href="/About">About</a>
-            <BiCart className='shopping-cart'/>
+            <BiCart className='shopping-cart' />
+            <div className='items-in-cart'>({productsCount})</div>
           </div>
         </div>
         <div>
@@ -30,6 +34,7 @@ function Shop() {
               )
              })}
             </ul>
+            <div className='checkout'></div>
           </div>
         </div>
       </div>
