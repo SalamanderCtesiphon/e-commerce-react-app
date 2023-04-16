@@ -32,7 +32,7 @@ function Header() {
             <div className='check-out-btn'>Check Out</div>
           </div>
           :
-              <h1>There are no items in your cart</h1>
+              <h3>There are no items in your cart</h3>
 
         }
         </div>
