@@ -2,6 +2,7 @@ import React from 'react'
 import { BiCart } from 'react-icons/bi'
 import { useContext } from 'react'
 import { CartContext } from '../CartContext'
+import CheckOut from './CheckOut'
 
 function Header() {
   const cart = useContext(CartContext)
@@ -20,6 +21,18 @@ function Header() {
             }
           </div>
         </div>
+        {productsCount > 0 ? 
+          <div>
+            <p>Items in your cart:</p>
+            {cart.items.map((currentProduct, idx) => (
+              <CheckOut key={currentProduct.id} id={currentProduct.id} quantity={currentProduct.quantity}></CheckOut>
+            ))}
+            <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
+          </div>
+          :
+              <h1>There are no items in your cart</h1>
+
+        }
     </div>
   )
 }
