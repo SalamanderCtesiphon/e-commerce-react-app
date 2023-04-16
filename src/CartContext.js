@@ -1,10 +1,12 @@
 import React from 'react'
-import { crea}
+import { createContext, useState } from 'react'
+import { productsArray } from './Products'
 
-function CartContext() {
-  return (
-    <div>CartContext</div>
-  )
-}
-
-export default CartContext
+const cartContext = createContext({
+  items: [],
+  getProductQuantity: () => {},
+  addOneToCart: () => {},
+  removeOneFromCart: () => {},
+  deleteFromCart: () => {},
+  getTotalCost: () => {}
+})
