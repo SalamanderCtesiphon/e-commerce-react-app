@@ -21,7 +21,7 @@ const productsArray = [
 
 function getProductData(id) {
   let productData = productsArray.find(product => product.id === id)
-  if(productData == undefined) {
+  if(productData === undefined) {
     console.log('data does not exist for id')
     return undefined
   }
